@@ -31,12 +31,9 @@ local hooks = require "core.hooks"
 -- see: https://github.com/wbthomason/packer.nvim
 -- examples below:
 
--- hooks.add("install_plugins", function(use)
---    use {
---       "max397574/better-escape.nvim",
---       event = "InsertEnter",
---    }
--- end)
+hooks.add("install_plugins", function(use)
+	use {      "williamboman/nvim-lsp-installer",   }
+end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
 -- then source it with

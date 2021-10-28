@@ -6,10 +6,9 @@ M.ui, M.options, M.plugin_status, M.mappings, M.custom, M.plugins = {}, {}, {}, 
 -- NvChad included plugin options & overrides
 M.plugins = {
    options = {
-      --   lspconfig = {
-      --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
-      --    setup_lspconf = "",
-      --   },
+        lspconfig = {
+         setup_lspconf = "custom.plugins.lspconfig",
+        },
    },
    -- To change the Packer `config` of a plugin that comes with NvChad,
    -- add a table entry below matching the plugin github name
@@ -18,6 +17,7 @@ M.plugins = {
    --              use "(custom.configs).my_func()" to call a function
    --              use "custom.blankline" to call a file
    default_plugin_config_replace = {
+	   
    },
 }
 
