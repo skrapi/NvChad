@@ -1,7 +1,26 @@
 -- IMPORTANT NOTE : This is the user config, can be edited. Will be preserved if updated with internal updater
 
 local M = {}
-M.ui, M.options, M.plugin_status, M.mappings, M.custom = {}, {}, {}, {}, {}
+M.ui, M.options, M.plugin_status, M.mappings, M.custom, M.plugins = {}, {}, {}, {}, {}, {}
+
+-- NvChad included plugin options & overrides
+M.plugins = {
+   options = {
+      --   lspconfig = {
+      --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
+      --    setup_lspconf = "",
+      --   },
+   },
+   -- To change the Packer `config` of a plugin that comes with NvChad,
+   -- add a table entry below matching the plugin github name
+   --              '-' -> '_', remove any '.lua', '.nvim' extensions
+   -- this string will be called in a `require`
+   --              use "(custom.configs).my_func()" to call a function
+   --              use "custom.blankline" to call a file
+   default_plugin_config_replace = {
+	   lspconfig = "custom.plugins.lspconfig",
+   },
+}
 
 -- non plugin ui configs, available without any plugins
 M.ui = {
@@ -24,19 +43,6 @@ M.ui = {
    transparency = false,
 }
 
--- plugin related ui options
-M.ui.plugin = {
-   -- statusline related options
-   statusline = {
-      -- these are filetypes, not pattern matched
-      -- if a filetype is present in shown, it will always show the statusline, irrespective of filetypes in hidden
-      hidden = {},
-      shown = {},
-      -- default, round , slant , block , arrow
-      style = "default",
-   },
-}
-
 -- non plugin normal, available without any plugins
 M.options = {
    clipboard = "unnamedplus",
@@ -57,7 +63,7 @@ M.options = {
    smartindent = true,
    tabstop = 8, -- Number of spaces that a <Tab> in the file counts for
    timeoutlen = 400,
-   relativenumber = false,
+   relativenumber = true,
    ruler = false,
    updatetime = 250,
    -- used for updater
