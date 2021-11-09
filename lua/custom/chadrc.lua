@@ -7,7 +7,7 @@ M.ui, M.options, M.plugin_status, M.mappings, M.custom, M.plugins = {}, {}, {}, 
 M.plugins = {
    options = {
         lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
+         	setup_lspconf = "custom.plugins.lspconfig",
         },
    },
    -- To change the Packer `config` of a plugin that comes with NvChad,
@@ -58,9 +58,9 @@ M.options = {
    -- relative numbers in normal mode tool at the bottom of options.lua
    numberwidth = 2,
    permanent_undo = true,
-   shiftwidth = 8,
+   shiftwidth = 4,
    smartindent = true,
-   tabstop = 8, -- Number of spaces that a <Tab> in the file counts for
+   tabstop = 4, -- Number of spaces that a <Tab> in the file counts for
    timeoutlen = 400,
    relativenumber = true,
    ruler = false,
